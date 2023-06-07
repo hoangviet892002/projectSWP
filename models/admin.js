@@ -42,13 +42,7 @@ const Admin = sequelize.define('Admin', {
     allowNull: false,
   },
 }, {
-  hooks: {
-    beforeCreate: async (admin) => {
-      // Mã hóa mật khẩu trước khi lưu vào cơ sở dữ liệu
-      const hashedPassword = await bcrypt.hash(admin.password, 10);
-      admin.password = hashedPassword;
-    },
-  },
+  
 });
 
 module.exports = Admin;

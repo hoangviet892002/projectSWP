@@ -42,13 +42,7 @@ const Doctor = sequelize.define('Doctor', {
     allowNull: false,
   },
 }, {
-  hooks: {
-    beforeCreate: async (doctor) => {
-      // Mã hóa mật khẩu trước khi lưu vào cơ sở dữ liệu
-      const hashedPassword = await bcrypt.hash(doctor.password, 10);
-      doctor.password = hashedPassword;
-    },
-  },
+  
 });
 
 module.exports = Doctor;
